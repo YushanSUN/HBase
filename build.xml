@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="makejar" name="HBase">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="../../../../usr/lib/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.7"/>
+    <property name="source" value="1.7"/>
+    <path id="JUnit 3.libraryclasspath">
+        <pathelement location="../../../../usr/share/eclipse/dropins/jdt/plugins/org.junit_3.8.2.dist/junit.jar"/>
+    </path>
+    <path id="HBase.classpath">
+        <pathelement location="bin"/>
+    </path>
+    <target name ="makejar" description="Create a jar for the HW project">
+      <jar jarfile="hbase.jar">
+      	<fileset dir="bin" includes="*.class"/>
+      	<fileset dir="" includes="log4j.properties" />
+      </jar>
+    </target>
+</project>
